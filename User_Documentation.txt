@@ -1,0 +1,13 @@
+Team LKPD
+CPE 365-03
+
+How to Install/Use Program:
+	1) Download and make sure all source code and executables are in a single folder/directory
+	2) Make sure you use some IDE that supports JavaFX and MySQL connection (Ex. IntelliJ)
+	3) Compile all the code and run the program through Prompt.java using your IDE.
+		a) When establishing connection to database, use the following account information: (Should already be properly listed, but to double check)
+			User: LKPD
+			Password: lkpd365
+
+			** Note: When using a database, make sure to initialize table and trigger as listed in SQLCommands.txt
+	4) Use UI as desired.

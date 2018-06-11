@@ -1,0 +1,35 @@
+TEAM LKPD 
+CPE 365-03
+
+Members:
+Lucas Han 
+Kevin Kong
+Prachi Mehta
+Daniel Kim
+
+
+Tasks:
+Creating and Setting up and Maintaining Java Code with the UI:
+	- Adjusted/Modified to suit UI better
+		- Completed by: Kevin Kong
+		- Time Spent: 5-6 Hours
+	- When: May 19 - 22 
+
+Connecting Java to MySQL and Maintaining Java Code with the UI
+	- Adjusted/Modified to suit UI Better
+		- Completed by: Lucas Han
+		- Time Spent: 5-6 Hours
+	- When: May 23 - 25
+
+Connecting Program's Output to UI 
+	- Retrieving Data and Expressing data through UI
+	- Prompting and Inserting data to Database through UI
+		- Completed by: Daniel Kim and Prachi Mehta
+		- Time Spent: 4-5 Hours
+	- When: May 30 - June 10
+
+Assiting each other in problems faced and giving input - Team Meetings, etc.
+	- Completed by: Everyone
+	- Time Spent: 3-5 Hours
+	- When: May 19 - June 10
+	- Meetings: May 19, June 10

@@ -1,0 +1,26 @@
+// For the sold_bit in Car_Invetory, sold_bit = 0 if not sold, 1 if sold.
+// Account: LKPD / lkpd365
+
+CREATE TABLE Car_Inventory( inventoryID INTEGER AUTO_INCREMENT PRIMARY KEY, Model VARCHAR(15), Make VARCHAR(15), Year INTEGER, Car_Condition ENUM('New', 'Good', 'Fair', 'Poor'), Colors VARCHAR(15), Miles INTEGER, Price INTEGER, Car_Type ENUM("Sedan", "Two-Door", "SUV"), sold_bit INTEGER DEFAULT 0);
+
+CREATE TABLE Salesperson (eid INTEGER AUTO_INCREMENT PRIMARY KEY, sName VARCHAR(30), dobirth DATE, empsloyment_date DATE, commission_rate INTEGER);
+
+
+CREATE TABLE Car_Customer(custID INTEGER AUTO_INCREMENT PRIMARY KEY, cName VARCHAR(30), phone VARCHAR(16), address VARCHAR(40));
+
+
+CREATE TABLE Sale(s_id INTEGER AUTO_INCREMENT PRIMARY KEY, sale_date DATE, amount INTEGER, e_id INTEGER, cid INTEGER, commission_amount INTEGER, cust_id INTEGER, Foreign Key(cust_id) references Car_Customer(custID), Foreign Key(e_id) references Salesperson(eid), Foreign Key(cid) references Car_Inventory(inventoryID));
+
+
+// Every time I sell a car, mark that the car has been sold.
+CREATE TRIGGER update_car 
+	AFTER INSERT ON Sale 
+	FOR EACH ROW 
+	UPDATE Car_Inventory SET sold_bit = 1 WHERE inventoryID = new.cid;
+
+
+// Every time I sell car, get commission rate based off employee ID and calculate commission amount. Rate / 100 * Price it was sold
+CREATE TRIGGER commissionAmount 
+	BEFORE INSERT ON Sale 
+	FOR EACH ROW 
+		SET new.commission_amount = (SELECT (Salesperson.commission_rate*new.amount/100) FROM Salesperson where new.e_id = eid);
